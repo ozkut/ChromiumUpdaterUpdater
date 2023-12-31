@@ -70,7 +70,7 @@ namespace ChromiumUpdaterLauncher
                 ExitProgram(true);
             }
 
-            float existingVersion = float.Parse(FileVersionInfo.GetVersionInfo(UpdaterConstants.installPath).ProductVersion);
+            float existingVersion = float.Parse(FileVersionInfo.GetVersionInfo(UpdaterConstants.installPath).ProductVersion[..3]);
             float latestVersion = float.Parse(releases[0].Name);
 
             string existingVersionString = existingVersion.ToString("0.0");
